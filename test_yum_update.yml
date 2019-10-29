@@ -15,6 +15,5 @@
     copy:
       content: "{{ myshell_output.stdout }}"
       dest: /usr1/sysadm
-      state: touch
-    delegate_to: localhost
+      delegate_to: localhost
 
