@@ -10,6 +10,5 @@
       register: result 
       
 - local_action:
-    
-    copy content="{{result.stdout}}" dest="/root/sosa/output.txt"
+       copy content="{{result.stdout}}" dest="/root/sosa/output.txt"
     
