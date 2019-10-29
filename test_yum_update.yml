@@ -10,10 +10,7 @@
     register: myshell_output
     
     
-    
-  - name: copy the output to a local file
-    become: true
-    become_user: root
+  
   - local_action: 
     copy:
       content: "{{ myshell_output.stdout }}"
