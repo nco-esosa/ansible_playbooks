@@ -1,28 +1,10 @@
-- name: Test Yum Update
+- name:use chage command
   hosts: all
   become: true
-  become_user: sysadm
+  become_user: root
   gather_facts: no
   tasks:
-#    - name: Yum clean all
-#      shell: yum clean all
-#      args:
-#        warn: false
-#      become: true
-#      become_user: sysadm
-#    - name: RHN profile sync
-#      shell: /usr/sbin/rhn-profile-sync
-#      become: true
-#      become_user: sysadm
-#    - name: RHN check
-#      command: /usr/sbin/rhn_check
-    - name: Upgrade kernel
-      yum:
-        name: '*'
-        state: latest
-#    - name: Upgrade everything else
-#      yum:
-#        name: '*'
-#        state: latest
-#        exclude: 'kernal*'
+
+    - name: Find users on the account and save it to a file.
+      shell: cut -f 1 -d: /etc/passwd | xargs -n 1 -I {} bash -c " echo -e '\n{}' ; chage -l {}"  >> /tmp/chage/chage.log
 
