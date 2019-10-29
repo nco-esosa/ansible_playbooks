@@ -14,7 +14,7 @@
   - name: copy the output to a local file
     copy:
       content: "{{ myshell_output.stdout }}"
-      dest: "/root/sosa/hello.txt"
+      dest: "/usr1/sysadm"
       state: touch
     delegate_to: localhost
 
