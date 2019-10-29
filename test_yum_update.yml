@@ -6,7 +6,7 @@
   tasks:
 
     - name: Find users on the account and save it to a file.
-      shell: 'cut -f 1 -d: /etc/passwd | xargs -n 1 -I {} bash -c "echo -e {} ; chage -l {}" '
+      shell: 'awk -F':' '{ system("echo " $1 " && chage -l " $1)  }' /etc/passwd" '
       register: result 
       
     - local_action: copy content={{result}} dest=/root/sosa/output.txt
