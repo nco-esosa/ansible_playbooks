@@ -14,7 +14,7 @@
   - name: copy the output to a local file
     copy:
       content: "{{ myshell_output.stdout }}"
-      dest: "/tmp/hello.txt"
+      dest: "/root/sosa/hello.txt"
       state: touch
     delegate_to: localhost
 
