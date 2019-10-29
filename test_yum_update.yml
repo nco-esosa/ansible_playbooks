@@ -1,13 +1,15 @@
 - name: use chage command
-  hosts: all
-  become: true
-  become_user: root
-  gather_facts: no
-  tasks:
+   hosts: all
+   become: true
+   become_user: root
+   gather_facts: no
+   tasks:
 
-    - name: Find users on the account and save it to a file.
-      shell: 'awk -F':' '{ system("echo " $1 " && chage -l " $1)  }' /etc/passwd" '
+- name: Find users on the account and save it to a file.
+      shell: 'cut -f 1 -d: /etc/passwd | sudo xargs -n 1 -I {} bash -c " echo {} ; chage -l 
       register: result 
       
-    - local_action: copy content={{result}} dest=/root/sosa/output.txt
-      delegate_to: localhost
+- local_action:
+    
+    copy content="{{result.stdout}}" dest="/root/sosa/output.txt"
+    
