@@ -12,6 +12,6 @@
     - name: Write linked_dirs file
       copy:
         content: '{{ result("\n") }}'
-        dest: /root/sosa/tmp
+        dest: /root/sosa/
         state: touch
       delegate_to: localhost
