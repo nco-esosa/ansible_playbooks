@@ -16,4 +16,7 @@
       content: "{{ myshell_output.stdout }}"
       dest: "/usr1/sysadm/touch.txt"
     delegate_to: localhost
+    become: true
+    become_user: root
+    
 
