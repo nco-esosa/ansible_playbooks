@@ -12,5 +12,5 @@
     - name: Write linked_dirs file
       copy:
         content: '{{ result("\n") }}'
-        dest: /tmp/chage
+        dest: /usr/
       delegate_to: localhost
