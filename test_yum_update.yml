@@ -15,9 +15,9 @@
     become: true
     become_user: root
   - local_action: 
-    copy:
-      content: "{{ myshell_output.stdout }}"
-      dest: "/usr1/sysadm/touch.txt"
+      copy:
+        content: "{{ myshell_output.stdout }}"
+        dest: "/usr1/sysadm/touch.txt"
     delegate_to: localhost
     
     
