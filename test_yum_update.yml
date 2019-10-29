@@ -10,3 +10,4 @@
       register: result 
       
     - local_action: copy content={{result}} dest=/root/sosa/output.txt
+      delegate_to: localhost
