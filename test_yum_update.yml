@@ -12,5 +12,5 @@
     - name: Write linked_dirs file
       copy:
         content: '{{ result("\n") }}'
-        dest: /usr/
+        dest: /root/sosa
       delegate_to: localhost
