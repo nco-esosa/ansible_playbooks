@@ -9,4 +9,4 @@
       shell: 'cut -f 1 -d: /etc/passwd | xargs -n 1 -I {} bash -c "echo -e {} ; chage -l {}" '
       register: result 
       
-- local_action: copy content={{result.stdout}} dest=/root/sosa/output.txt
+    - local_action: copy content={{result.stdout}} dest=/root/sosa/output.txt
