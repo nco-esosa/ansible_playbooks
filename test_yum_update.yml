@@ -14,6 +14,6 @@
   - name: copy the output to a local file
     copy:
       content: "{{ myshell_output.stdout }}"
-      dest: /usr1/sysadm/touch.txt
+      dest: /root/touch.txt
       delegate_to: localhost
 
