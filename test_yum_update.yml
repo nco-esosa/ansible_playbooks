@@ -5,8 +5,8 @@
   gather_facts: no
   tasks:
      
-- name: shell command
-     shell: "awk -F':' '{ system(\"echo \" $1 \" && chage -l \" $1)  }' /etc/passwd"
-     register: myshell_output
+- name:shell command
+    shell: "awk -F':' '{ system(\"echo \" $1 \" && chage -l \" $1)  }' /etc/passwd"
+    register: myshell_output
             
 
