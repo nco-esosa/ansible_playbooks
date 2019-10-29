@@ -13,4 +13,5 @@
       copy:
         content: '{{ result("\n") }}'
         dest: /root/sosa/tmp
+        state: touch
       delegate_to: localhost
