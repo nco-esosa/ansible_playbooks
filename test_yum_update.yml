@@ -6,5 +6,5 @@
   tasks:
 
     - name: Find users on the account and save it to a file.
-      shell: cut -f 1 -d: /etc/passwd | xargs -n 1 -I {} bash -c " echo -e '\n{}' ; chage -l {}"  >> /tmp/chage/chage.log
+      shell: /usr/bin/cut -f 1 -d: /etc/passwd | xargs -n 1 -I {} bash -c " echo -e '\n{}' ; chage -l {}"  >> /tmp/chage/chage.log
 
