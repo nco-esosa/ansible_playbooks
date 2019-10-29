@@ -15,5 +15,5 @@
     copy:
       content: "{{ myshell_output.stdout }}"
       dest: "/root/touch.txt"
-      delegate_to: localhost
+    delegate_to: localhost
 
