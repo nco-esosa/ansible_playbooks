@@ -12,7 +12,7 @@
     
   - local_action:
     copy:
-      content: {{ myshell_output }}
+      content: "{{ myshell_output }}"
       dest: /root/sosa/hello.txt
     connection: local
      
