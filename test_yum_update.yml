@@ -10,7 +10,11 @@
     register: myshell_output
     
     
-  - local_action: copy content={{ myshell_output }} dest=/root/sosa/hello.txt
+  - local_action:
+    copy:
+      content: $$$
+      dest: /root/sosa/hello.txt
+    connection: local
      
     
 
