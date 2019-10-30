@@ -14,7 +14,7 @@
   - local_action: 
     module: copy
       content: "{{ myshell_output.stdout }}"
-      dest: "/usr1/sysadm/touch.txt"
+      dest: "/root/sosa/hello.txt"
     delegate_to: localhost
     
     
