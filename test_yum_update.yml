@@ -14,7 +14,7 @@
     
   - local_action:
       module: copy
-      content: "{{ myshell_output | to_nice_jason }}"
+      content: "{{ myshell_output | to_nice_json }}"
       dest: /tmp/hello.txt
     connection: local
      
