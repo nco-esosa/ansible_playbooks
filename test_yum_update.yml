@@ -13,7 +13,7 @@
       var: myshell_output
     
   - local_action:
-    copy:
+      module: copy
       content: "{{ myshell_output | to_nice_jason }}"
       dest: /tmp/hello.txt
     connection: local
