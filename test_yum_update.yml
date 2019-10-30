@@ -13,7 +13,7 @@
   - local_action:
     copy:
       content={{ myshell_output }}
-      dest: /root/sosa/hello.txt
+      dest=/root/sosa/hello.txt
     connection: local
      
     
