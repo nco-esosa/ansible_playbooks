@@ -10,12 +10,7 @@
     register: myshell_output
     
     
-  
-  - local_action: 
-    module: copy
-      content: "{{ myshell_output.stdout }}"
-      dest: "/root/sosa/hello.txt"
-    delegate_to: localhost
-    
+  - local_action: copy content={{ myshell_output }} dest=/root/sosa/hello.txt
+     
     
 
