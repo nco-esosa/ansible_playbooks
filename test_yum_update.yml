@@ -15,6 +15,7 @@
   - local_action:
       module: copy
       content: "{{ myshell_output | to_nice_json }}"
+      sudo: no
       dest: /tmp/hello.txt
     connection: local
      
